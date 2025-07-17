@@ -1,0 +1,211 @@
+/**
+ * INPUT.CSS - ARQUIVO FONTE DO TAILWIND CSS
+ * Responsável por: Definição de estilos customizados + Componentes do tema Aliu
+ * Depende de: 
+ * - Tailwind CSS 3.3.5+
+ * - Google Fonts (Poppins)
+ * 
+ * IMPORTANTE: Sempre rodar 'npm run build:css' após alterações
+ */
+
+/* ============================================================================
+   CAMADAS BASE DO TAILWIND
+   ============================================================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   ESTILOS BASE DO TEMA ALIU
+   ============================================================================ */
+
+/**
+ * CONFIGURAÇÃO BASE DO BODY
+ * Responsável por: Fonte padrão + Cor de texto do tema
+ * Depende de: Google Fonts (Poppins) carregada
+ */
+@layer base {
+  body {
+    @apply font-aliu text-aliu-dark;
+  }
+}
+
+/* ============================================================================
+   COMPONENTES CUSTOMIZADOS DO TEMA ALIU
+   ============================================================================ */
+
+/**
+ * COMPONENTES PRINCIPAIS
+ * Responsável por: Botões + Header + Menu + Dropdowns
+ * Depende de: Cores customizadas definidas no tailwind.config.js
+ */
+@layer components {
+  
+  /* HEADER E MENU PRINCIPAL */
+  /**
+   * ESTILOS DO HEADER
+   * Responsável por: Padding vertical + Cor do texto herdada
+   * Depende de: Variável CSS --panel-text-color definida
+   */
+  header {
+    @apply text-[var(--panel-text-color)];
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  /* BOTÕES DO TEMA ALIU */
+  /**
+   * BOTÃO PRINCIPAL ALIU
+   * Responsável por: Estilo base dos botões + Hover effects
+   * Depende de: Nenhuma dependência específica
+   */
+  .btn-aliu {
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:transform hover:-translate-y-1;
+  }
+  
+  /**
+   * BOTÃO PRIMÁRIO
+   * Responsável por: Botões de ação principal + Hover shadow
+   * Depende de: Cores aliu-accent e aliu-dark definidas
+   */
+  .btn-primary {
+    @apply bg-aliu-accent text-aliu-dark hover:shadow-lg;
+  }
+  
+  /**
+   * BOTÃO SECUNDÁRIO
+   * Responsável por: Botões de ação secundária + Hover invertido
+   * Depende de: Cores aliu-dark definidas
+   */
+  .btn-secondary {
+    @apply bg-transparent text-white border-2 border-white hover:bg-white hover:text-aliu-dark;
+  }
+
+  /* MENU STICKY E NAVEGAÇÃO */
+  /**
+   * MENU PRINCIPAL STICKY
+   * Responsável por: Menu fixo no topo + Sombra + Z-index
+   * Depende de: Classe 'menu' aplicada no HTML
+   * 
+   * IMPORTANTE: Garantir que a classe 'menu' esteja no header
+   */
+  .menu {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #fff;
+  }
+  
+  /**
+   * LINKS DO MENU
+   * Responsável por: Transição suave + Hover vermelho
+   * Depende de: Variável CSS --panel-text-color definida
+   */
+  .menu a {
+    @apply transition-colors duration-300 hover:text-red-500;
+    color: var(--panel-text-color);
+  }
+  
+  /* SUBMENUS E DROPDOWNS */
+  /**
+   * SUBMENU PRINCIPAL
+   * Responsável por: Espaçamento + Sombra dos dropdowns
+   * Depende de: Classes geradas pelo wp_nav_menu()
+   */
+  .sub-menu {
+    margin-top: 1rem;
+    @apply shadow-xl;
+  }
+  
+  /**
+   * COMPORTAMENTO DROPDOWN
+   * Responsável por: Aparecer apenas no hover + Transição suave
+   * Depende de: Classes 'cart' ou 'group' no elemento pai
+   * 
+   * IMPORTANTE: Usar com .cart:hover .dropdown ou .group:hover > .dropdown
+   */
+  .dropdown {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+  
+  /**
+   * TRIGGER DO DROPDOWN NO HOVER
+   * Responsável por: Mostrar dropdown ao passar o mouse
+   * Depende de: Estrutura HTML com classes 'cart' ou 'group'
+   */
+  .cart:hover .dropdown,
+  .group:hover > .dropdown {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  /**
+   * LINKS DO SUBMENU
+   * Responsável por: Padding + Hover background + Bordas arredondadas
+   * Depende de: Estrutura de submenu do WordPress
+   */
+  .sub-menu a {
+    @apply px-4 py-2 block hover:bg-gray-100 rounded-md;
+  }
+  
+  /* CARRINHO E DROPDOWNS ESPECÍFICOS */
+  /**
+   * CONTAINER DO CARRINHO
+   * Responsável por: Gradiente de fundo + Posicionamento relativo
+   * Depende de: Variável CSS --bg-color definida
+   */
+  .cart-container {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100px, var(--bg-color) 100px);
+    position: relative;
+  }
+  
+  /**
+   * DROPDOWN DO CARRINHO
+   * Responsável por: Posicionamento absoluto + Transição + Z-index
+   * Depende de: Container com classe 'cart-container'
+   */
+  .cart-dropdown {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 100;
+  }
+  
+  /**
+   * HOVER DO CARRINHO
+   * Responsável por: Mostrar dropdown do carrinho no hover
+   * Depende de: Estrutura HTML com classe 'cart-container'
+   */
+  .cart-container:hover .cart-dropdown {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  /**
+   * GRADIENTE DO MENU
+   * Responsável por: Conexão visual com o fundo do conteúdo
+   * Depende de: Variável CSS --bg-color definida
+   */
+  .menu {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100px, var(--bg-color) 100px);
+  }
+  
+  /**
+   * GRADIENTE DO LOGO ALIU
+   * Responsável por: Aplicar gradiente ao texto do logo
+   * Depende de: Nenhuma dependência específica
+   */
+  .logo-gradient {
+    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+} 

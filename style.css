@@ -1,0 +1,16 @@
+/*
+Theme Name: Aliu Theme
+Theme URI: https://aliu.com/
+Author: Seu Nome
+Author URI: https://aliu.com/
+Description: Tema clássico WordPress com Tailwind CSS integrado, baseado no layout original HTML.
+Version: 1.0
+Requires at least: 6.8
+Tested up to: 6.8
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: aliu-theme
+Tags: tailwind, custom, classic-theme
+*/
+
+/* O CSS real do tema é gerado pelo Tailwind e fica em dist/output.css */ 

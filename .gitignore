@@ -1,0 +1,47 @@
+# Node modules (caso use algum pacote npm futuramente)
+node_modules/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários de build
+dist/
+build/
+
+# Configurações do VS Code
+.vscode/
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.swo
+
+# SASS Cache
+.sass-cache/
+
+# PHPStorm
+.idea/
+
+# Arquivos de sistema
+*.bak
+*.old
+
+# WordPress - você pode ignorar tudo menos seu tema/plugin personalizado
+wp-content/plugins/*
+!wp-content/plugins/seu-plugin/
+
+wp-content/themes/*
+!wp-content/themes/seu-tema/
+
+# Arquivos sensíveis (caso tenha)
+.env
+.env.local
+.env.*
+
+# Cache de navegador e sessões
+*.cache
+*.session
