@@ -14,3 +14,393 @@ Tags: tailwind, custom, classic-theme
 */
 
 /* O CSS real do tema é gerado pelo Tailwind e fica em dist/output.css */ 
+
+/* Estilos personalizados para o layout de produto */
+
+/* Botões personalizados */
+.btn-aliu {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: #FF6B6B;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-primary:hover {
+    background: #e55a5a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #1e293b;
+    transform: translateY(-2px);
+}
+
+/* Preços */
+.price-current {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: white;
+}
+
+.price-old {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: line-through;
+}
+
+/* Opções de cores */
+.color-option {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do produto */
+.product-image {
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Elemento gráfico de texto */
+.product-brand {
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3.75rem;
+    font-weight: 900;
+    color: white;
+    opacity: 0.2;
+    transform: translateY(-50%) rotate(90deg);
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: 0.1em;
+}
+
+/* Seções de conteúdo */
+.content-section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 4rem;
+}
+
+/* Cards de categoria */
+.category-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Benefícios */
+.benefit-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+/* Estilos específicos para WooCommerce integrado - FORÇADOS */
+.custom-add-to-cart {
+    margin-bottom: 1rem !important;
+}
+
+.custom-add-to-cart .cart {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+}
+
+.custom-add-to-cart .quantity {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.custom-add-to-cart .quantity input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    padding: 0.75rem !important;
+    border-radius: 0.5rem !important;
+    width: 80px !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+}
+
+.custom-add-to-cart .quantity input:focus {
+    outline: none !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Botão Adicionar ao Carrinho - Estilo da Home */
+.custom-add-to-cart .single_add_to_cart_button,
+.custom-add-to-cart button[type="submit"],
+.custom-add-to-cart input[type="submit"],
+.custom-add-to-cart .single_add_to_cart_button.button,
+.custom-add-to-cart .button {
+    background: #FF6B6B !important; /* Cor da home */
+    color: white !important;
+    padding: 1rem 2rem !important;
+    font-size: 1.125rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4) !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+}
+
+.custom-add-to-cart .single_add_to_cart_button:hover,
+.custom-add-to-cart button[type="submit"]:hover,
+.custom-add-to-cart input[type="submit"]:hover,
+.custom-add-to-cart .single_add_to_cart_button.button:hover,
+.custom-add-to-cart .button:hover {
+    background: #e55a5a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px -3px rgba(255, 107, 107, 0.6) !important;
+    color: white !important;
+}
+
+.custom-add-to-cart .variations {
+    margin-bottom: 1rem !important;
+}
+
+.custom-add-to-cart .variations td {
+    padding: 0.5rem 0 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.custom-add-to-cart .variations select {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    padding: 0.5rem !important;
+    border-radius: 0.375rem !important;
+    min-width: 150px !important;
+}
+
+.custom-add-to-cart .variations select option {
+    background: #1e293b !important;
+    color: white !important;
+}
+
+/* Preços WooCommerce integrados - FORÇADOS */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.custom-add-to-cart .price,
+.custom-add-to-cart p.price,
+.custom-add-to-cart span.price {
+    color: white !important;
+    font-size: 1.875rem !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+}
+
+.woocommerce div.product p.price del,
+.woocommerce div.product span.price del,
+.custom-add-to-cart .price del,
+.custom-add-to-cart p.price del,
+.custom-add-to-cart span.price del {
+    font-size: 1.125rem !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-right: 1rem !important;
+}
+
+.woocommerce div.product p.price ins,
+.woocommerce div.product span.price ins,
+.custom-add-to-cart .price ins,
+.custom-add-to-cart p.price ins,
+.custom-add-to-cart span.price ins {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+/* Sobrescrever qualquer estilo WooCommerce padrão */
+.woocommerce .custom-add-to-cart * {
+    font-family: inherit !important;
+}
+
+.woocommerce .custom-add-to-cart button,
+.woocommerce .custom-add-to-cart input,
+.woocommerce .custom-add-to-cart select {
+    font-family: inherit !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .btn-aliu {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .price-current {
+        font-size: 1.5rem;
+    }
+    
+    .price-old {
+        font-size: 1rem;
+    }
+    
+    .product-brand {
+        font-size: 2.5rem;
+        right: -1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.875rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .custom-add-to-cart .cart {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    
+    .custom-add-to-cart .quantity input {
+        width: 60px !important;
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Gradientes personalizados */
+.gradient-primary {
+    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+}
+
+.gradient-secondary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    .btn-aliu,
+    .color-option,
+    .product-image,
+    .category-card,
+    .benefit-card {
+        transition: none;
+    }
+    
+    .btn-aliu:hover,
+    .color-option:hover,
+    .product-image:hover,
+    .category-card:hover,
+    .benefit-card:hover {
+        transform: none;
+    }
+}

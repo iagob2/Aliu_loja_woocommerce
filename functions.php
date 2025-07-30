@@ -165,3 +165,68 @@ class Aliu_Footer_Walker extends Walker_Nav_Menu {
         $output .= '</li>';
     }
 } 
+
+/**
+ * SUPORTE AO WOOCOMMERCE
+ * Responsável por: Habilitar funcionalidades do WooCommerce no tema
+ * Depende de: Plugin WooCommerce ativo
+ * 
+ * IMPORTANTE: Garante que o tema seja compatível com WooCommerce
+ */
+add_action('after_setup_theme', function() {
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+});
+
+/**
+ * REMOVE ESTILOS PADRÃO DO WOOCOMMERCE
+ * Responsável por: Usar apenas nossos estilos Tailwind
+ * Depende de: WooCommerce ativo
+ */
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
+/**
+ * ADICIONA SUPORTE A IMAGENS DE PRODUTO
+ * Responsável por: Garantir que imagens de produto sejam exibidas corretamente
+ * Depende de: WooCommerce ativo
+ */
+add_theme_support('post-thumbnails');
+
+/**
+ * PERSONALIZA O TEMPLATE DE PRODUTO WOOCOMMERCE
+ * Responsável por: Usar nosso template personalizado
+ * Depende de: WooCommerce ativo
+ */
+add_filter('woocommerce_locate_template', function($template, $template_name, $template_path) {
+    if ($template_name === 'single-product.php') {
+        $custom_template = get_template_directory() . '/single-produto.php';
+        if (file_exists($custom_template)) {
+            return $custom_template;
+        }
+    }
+    return $template;
+}, 10, 3);
+
+/**
+ * ADICIONA CLASSES CSS PERSONALIZADAS AOS ELEMENTOS WOOCOMMERCE
+ * Responsável por: Integrar elementos WooCommerce com nosso design
+ * Depende de: WooCommerce ativo
+ */
+add_filter('woocommerce_product_single_add_to_cart_text', function($text) {
+    return 'ADICIONAR AO CARRINHO';
+});
+
+add_filter('woocommerce_product_add_to_cart_text', function($text) {
+    return 'ADICIONAR AO CARRINHO';
+});
+
+/**
+ * PERSONALIZA O BOTÃO DE ADICIONAR AO CARRINHO
+ * Responsável por: Aplicar nosso estilo ao botão
+ * Depende de: WooCommerce ativo
+ */
+add_filter('woocommerce_loop_add_to_cart_link', function($html, $product) {
+    return str_replace('button', 'btn-aliu btn-primary', $html);
+}, 10, 2); 
