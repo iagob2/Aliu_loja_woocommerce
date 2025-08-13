@@ -21,7 +21,10 @@
  * IMPORTANTE: Usa filemtime() para cache busting automático
  */
 add_action('wp_enqueue_scripts', function() {
-    wp_enqueue_style('aliu-tailwind', get_template_directory_uri() . '/dist/output.css', [], filemtime(get_template_directory() . '/dist/output.css'));
+    $css_file = get_template_directory() . '/dist/output.css';
+    if (file_exists($css_file)) {
+        wp_enqueue_style('aliu-tailwind', get_template_directory_uri() . '/dist/output.css', [], filemtime($css_file));
+    }
 });
 
 // ============================================================================
@@ -181,6 +184,22 @@ add_action('after_setup_theme', function() {
 });
 
 /**
+ * GARANTIR QUE WOOCOMMERCE SEJA CARREGADO
+ * Responsável por: Verificar se WooCommerce está ativo antes de usar suas funções
+ * Depende de: Plugin WooCommerce ativo
+ */
+add_action('init', function() {
+    if (!class_exists('WooCommerce')) {
+        return;
+    }
+    
+    // Garantir que o WooCommerce seja inicializado
+    if (!did_action('woocommerce_init')) {
+        do_action('woocommerce_init');
+    }
+});
+
+/**
  * REMOVE ESTILOS PADRÃO DO WOOCOMMERCE
  * Responsável por: Usar apenas nossos estilos Tailwind
  * Depende de: WooCommerce ativo
@@ -229,4 +248,270 @@ add_filter('woocommerce_product_add_to_cart_text', function($text) {
  */
 add_filter('woocommerce_loop_add_to_cart_link', function($html, $product) {
     return str_replace('button', 'btn-aliu btn-primary', $html);
-}, 10, 2); 
+}, 10, 2);
+
+/**
+ * ESTILOS PERSONALIZADOS PARA CARRINHO E CHECKOUT
+ * Responsável por: Estilos específicos para páginas de carrinho e checkout
+ * Depende de: WooCommerce ativo
+ */
+add_action('wp_head', function() {
+    if (is_cart() || is_checkout() || is_page('carrinho')) {
+        ?>
+        <style>
+            /* Garantir que o main ocupe toda a altura da tela */
+            main.min-h-screen {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            /* Garantir que o footer apareça no final */
+            footer {
+                margin-top: auto;
+            }
+            
+            /* Layout 70/30 para carrinho */
+            .lg\:grid-cols-10 {
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                gap: 2rem;
+            }
+            
+            .lg\:col-span-7 {
+                grid-column: span 7;
+            }
+            
+            .lg\:col-span-3 {
+                grid-column: span 3;
+            }
+            
+            /* Layout responsivo para carrinho */
+            @media (max-width: 1023px) {
+                .lg\:grid-cols-10 {
+                    grid-template-columns: 1fr;
+                }
+                .lg\:col-span-7,
+                .lg\:col-span-3 {
+                    grid-column: span 1;
+                }
+            }
+            
+            /* Estilos para itens do carrinho */
+            .woocommerce-cart-form .cart-item {
+                transition: all 0.3s ease;
+            }
+            
+            .woocommerce-cart-form .cart-item:hover {
+                background-color: #f8fafc;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                margin: -0.5rem;
+            }
+            
+            /* Input de quantidade personalizado */
+            .woocommerce-cart-form .quantity input[type="number"] {
+                width: 4rem;
+                padding: 0.25rem 0.5rem;
+                border: 1px solid #d1d5db;
+                border-radius: 0.25rem;
+                text-align: center;
+                font-size: 0.875rem;
+                background-color: white;
+                transition: all 0.3s ease;
+            }
+            
+            .woocommerce-cart-form .quantity input[type="number"]:focus {
+                outline: none;
+                border-color: #f472b6;
+                box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1);
+            }
+            
+            /* Botão remover personalizado */
+            .woocommerce-cart-form .cart-item button[onclick*="remove"] {
+                transition: all 0.2s ease;
+            }
+            
+            .woocommerce-cart-form .cart-item button[onclick*="remove"]:hover {
+                background-color: #fef2f2;
+                border-radius: 0.25rem;
+                transform: scale(1.1);
+            }
+            
+            /* Imagens dos produtos */
+            .woocommerce-cart-form .cart-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem;
+            }
+            
+            /* Resumo do pedido */
+            .woocommerce-cart-form .cart_totals {
+                position: sticky;
+                top: 1.5rem;
+            }
+            
+            /* Tamanhos de ícones padronizados */
+            .w-4.h-4 {
+                width: 1rem;
+                height: 1rem;
+            }
+            
+            .w-5.h-5 {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+            
+            /* Botão Aplicar Cupom - Posicionamento melhorado */
+            .woocommerce-cart-form button[name="apply_coupon"] {
+                transform: translateY(-4px);
+                transition: all 0.3s ease;
+                margin-left: 0.5rem;
+            }
+            
+            .woocommerce-cart-form button[name="apply_coupon"]:hover {
+                transform: translateY(-4px) scale(1.02);
+            }
+            
+            /* Container do cupom com alinhamento melhorado */
+            .woocommerce-cart-form .flex.items-end {
+                align-items: flex-end;
+            }
+            
+            /* Segurança - Movido para baixo */
+            .woocommerce-cart-form + div .mt-8 {
+                margin-top: 2rem;
+            }
+            
+            /* Melhorar visibilidade dos inputs de quantidade */
+            .quantity-input {
+                transition: all 0.3s ease;
+                border: 1px solid #d1d5db;
+            }
+            
+            .quantity-input:focus {
+                outline: none;
+                border-color: #f472b6;
+                box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1);
+            }
+            
+            .quantity-input:hover {
+                border-color: #f472b6;
+            }
+            
+            /* Botões do tema */
+            .btn-aliu {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.75rem 1.5rem;
+                border-radius: 0.5rem;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                border: none;
+                font-size: 0.875rem;
+            }
+            
+            .btn-primary {
+                background: linear-gradient(135deg, #f472b6 0%, #06b6d4 100%);
+                color: white;
+            }
+            
+            .btn-primary:hover {
+                opacity: 0.9;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(244, 114, 182, 0.3);
+            }
+            
+            .btn-secondary {
+                background: white;
+                color: #374151;
+                border: 2px solid #d1d5db;
+            }
+            
+            .btn-secondary:hover {
+                background-color: #f9fafb;
+                border-color: #9ca3af;
+            }
+            
+            /* Melhorias para mobile */
+            @media (max-width: 768px) {
+                .woocommerce-cart-form .cart-item {
+                    padding: 1rem 0;
+                }
+                
+                .woocommerce-cart-form .cart-item .flex {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                }
+                
+                .woocommerce-cart-form .cart-item .flex > div:last-child {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+                
+                .woocommerce-cart-form .quantity input[type="number"] {
+                    width: 5rem;
+                }
+                
+                /* Ajuste do botão aplicar cupom no mobile */
+                .woocommerce-cart-form button[name="apply_coupon"] {
+                    transform: none;
+                }
+                
+                .woocommerce-cart-form button[name="apply_coupon"]:hover {
+                    transform: scale(1.02);
+                }
+            }
+            
+            /* Truncate para nomes longos */
+            .truncate {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            
+            /* Melhor espaçamento */
+            .space-y-3 > * + * {
+                margin-top: 0.75rem;
+            }
+            
+            .space-y-4 > * + * {
+                margin-top: 1rem;
+            }
+            
+            /* Garantir que o grid funcione corretamente */
+            .grid {
+                display: grid;
+            }
+            
+            .gap-8 {
+                gap: 2rem;
+            }
+            
+            /* Feedback visual para atualização */
+            .updating-feedback {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #f472b6;
+                color: white;
+                padding: 0.75rem 1rem;
+                border-radius: 0.5rem;
+                font-size: 0.875rem;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .updating-feedback.show {
+                transform: translateX(0);
+            }
+        </style>
+        <?php
+    }
+}); 

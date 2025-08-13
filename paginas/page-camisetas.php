@@ -12,10 +12,10 @@ get_header();
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold text-aliu-dark mb-2">
-                        casacos
+                        camisetas
                     </h1>
                     <p class="text-lg text-gray-600">
-                        encontre o melhor casaco para você
+                        encontre a melhor camiseta para você
                     </p>
                 </div>
                 <div class="mt-4 md:mt-0">
@@ -109,7 +109,6 @@ get_header();
                     <!-- Card de Produto 1 -->
                     <a href="/produto/camiseta-premium" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
                         <div class="relative">
-                            <div class="absolute -top-3 -left-3 bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold z-10">-20%</div>
                             <div class="w-full h-32 mb-3">
                                 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Camiseta Premium" class="w-full h-full object-cover rounded-xl">
                             </div>
@@ -119,104 +118,37 @@ get_header();
                             <div class="mb-3">
                                 <div class="flex items-center justify-center gap-2 mb-1">
                                     <span class="text-xs text-green-600 font-medium">PIX</span>
-                                    <span class="font-bold text-xl text-green-600">R$ 52</span>
+                                    <span class="font-bold text-2xl text-gray-900 line-through">R$ 65</span>
                                 </div>
                                 <div class="flex items-center justify-center gap-2 mb-0.5">
-                                    <span class="text-gray-500 line-through text-base">R$ 65</span>
+                                    <span class="text-green-600 font-semibold text-lg">R$ 52</span>
+                                    <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">-20%</span>
                                 </div>
                                 <p class="text-xs text-gray-600">em até 10x de R$ 6,50</p>
                             </div>
                         </div>
                     </a>
                     <!-- Card de Produto 2 -->
-                    <a href="/produto/moletom-comfort" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
+                    <a href="/produto/camiseta-basica" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
                         <div class="relative">
-                            <div class="absolute -top-3 -left-3 bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold z-10">-30%</div>
                             <div class="w-full h-32 mb-3">
-                                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Moletom Comfort" class="w-full h-full object-cover rounded-xl">
+                                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Camiseta Básica" class="w-full h-full object-cover rounded-xl">
                             </div>
                         </div>
                         <div class="text-center">
-                            <h3 class="font-semibold text-base text-gray-900 mb-2">Moletom Comfort</h3>
+                            <h3 class="font-semibold text-base text-gray-900 mb-2">Camiseta Básica</h3>
                             <div class="mb-3">
                                 <div class="flex items-center justify-center gap-2 mb-1">
                                     <span class="text-xs text-green-600 font-medium">PIX</span>
-                                    <span class="font-bold text-xl text-green-600">R$ 84</span>
+                                    <span class="font-bold text-2xl text-gray-900">R$ 35</span>
                                 </div>
-                                <div class="flex items-center justify-center gap-2 mb-0.5">
-                                    <span class="text-gray-500 line-through text-base">R$ 120</span>
-                                </div>
-                                <p class="text-xs text-gray-600">em até 10x de R$ 12,00</p>
+                                <p class="text-xs text-gray-600">em até 5x de R$ 7,00</p>
                             </div>
                         </div>
                     </a>
                     <!-- Card de Produto 3 -->
-                    <a href="/produto/bone-snapback" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
-                        <div class="relative">
-                            <div class="w-full h-32 mb-3">
-                                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Boné Snapback" class="w-full h-full object-cover rounded-xl">
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="font-semibold text-base text-gray-900 mb-2">Boné Snapback</h3>
-                            <div class="mb-3">
-                                <div class="flex items-center justify-center gap-2 mb-1">
-                                    <span class="text-xs text-green-600 font-medium">PIX</span>
-                                    <span class="font-bold text-xl text-green-600">R$ 33</span>
-                                </div>
-                                <div class="flex items-center justify-center gap-2 mb-0.5">
-                                    <span class="text-gray-500 line-through text-base">R$ 35</span>
-                                </div>
-                                <p class="text-xs text-gray-600">em até 3x de R$ 11,67</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- Card de Produto 4 -->
-                    <a href="/produto/caneca-arte" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
-                        <div class="relative">
-                            <div class="w-full h-32 mb-3">
-                                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Caneca Arte" class="w-full h-full object-cover rounded-xl">
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="font-semibold text-base text-gray-900 mb-2">Caneca Arte</h3>
-                            <div class="mb-3">
-                                <div class="flex items-center justify-center gap-2 mb-1">
-                                    <span class="text-xs text-green-600 font-medium">PIX</span>
-                                    <span class="font-bold text-xl text-green-600">R$ 29</span>
-                                </div>
-                                <div class="flex items-center justify-center gap-2 mb-0.5">
-                                    <span class="text-gray-500 line-through text-base">R$ 39</span>
-                                </div>
-                                <p class="text-xs text-gray-600">em até 2x de R$ 14,50</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- Card de Produto 5 -->
-                    <a href="/produto/acessorio-urbano" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
-                        <div class="relative">
-                            <div class="w-full h-32 mb-3">
-                                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Acessório Urbano" class="w-full h-full object-cover rounded-xl">
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="font-semibold text-base text-gray-900 mb-2">Acessório Urbano</h3>
-                            <div class="mb-3">
-                                <div class="flex items-center justify-center gap-2 mb-1">
-                                    <span class="text-xs text-green-600 font-medium">PIX</span>
-                                    <span class="font-bold text-xl text-green-600">R$ 19</span>
-                                </div>
-                                <div class="flex items-center justify-center gap-2 mb-0.5">
-                                    <span class="text-gray-500 line-through text-base">R$ 25</span>
-                                </div>
-                                <p class="text-xs text-gray-600">em até 2x de R$ 9,50</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- Card de Produto 6 -->
                     <a href="/produto/camiseta-arte" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
                         <div class="relative">
-                            <div class="absolute -top-3 -left-3 bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold z-10">-10%</div>
                             <div class="w-full h-32 mb-3">
                                 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Camiseta Arte" class="w-full h-full object-cover rounded-xl">
                             </div>
@@ -226,14 +158,73 @@ get_header();
                             <div class="mb-3">
                                 <div class="flex items-center justify-center gap-2 mb-1">
                                     <span class="text-xs text-green-600 font-medium">PIX</span>
-                                    <span class="font-bold text-xl text-green-600">R$ 47</span>
+                                    <span class="font-bold text-2xl text-gray-900 line-through">R$ 52</span>
                                 </div>
                                 <div class="flex items-center justify-center gap-2 mb-0.5">
-                                    <span class="text-gray-500 line-through text-base">R$ 52</span>
+                                    <span class="text-green-600 font-semibold text-lg">R$ 47</span>
+                                    <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">-10%</span>
                                 </div>
                                 <p class="text-xs text-gray-600">em até 8x de R$ 5,88</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+                    <!-- Card de Produto 4 -->
+                    <a href="/produto/camiseta-urbana" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
+                        <div class="relative">
+                            <div class="w-full h-32 mb-3">
+                                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Camiseta Urbana" class="w-full h-full object-cover rounded-xl">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="font-semibold text-base text-gray-900 mb-2">Camiseta Urbana</h3>
+                            <div class="mb-3">
+                                <div class="flex items-center justify-center gap-2 mb-1">
+                                    <span class="text-xs text-green-600 font-medium">PIX</span>
+                                    <span class="font-bold text-2xl text-gray-900">R$ 42</span>
+                                </div>
+                                <p class="text-xs text-gray-600">em até 6x de R$ 7,00</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Card de Produto 5 -->
+                    <a href="/produto/camiseta-designer" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
+                        <div class="relative">
+                            <div class="w-full h-32 mb-3">
+                                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Camiseta Designer" class="w-full h-full object-cover rounded-xl">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="font-semibold text-base text-gray-900 mb-2">Camiseta Designer</h3>
+                            <div class="mb-3">
+                                <div class="flex items-center justify-center gap-2 mb-1">
+                                    <span class="text-xs text-green-600 font-medium">PIX</span>
+                                    <span class="font-bold text-2xl text-gray-900 line-through">R$ 58</span>
+                                </div>
+                                <div class="flex items-center justify-center gap-2 mb-0.5">
+                                    <span class="text-green-600 font-semibold text-lg">R$ 49</span>
+                                    <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">-16%</span>
+                                </div>
+                                <p class="text-xs text-gray-600">em até 8x de R$ 6,13</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Card de Produto 6 -->
+                    <a href="/produto/camiseta-classica" class="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block">
+                        <div class="relative">
+                            <div class="w-full h-32 mb-3">
+                                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Camiseta Clássica" class="w-full h-full object-cover rounded-xl">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="font-semibold text-base text-gray-900 mb-2">Camiseta Clássica</h3>
+                            <div class="mb-3">
+                                <div class="flex items-center justify-center gap-2 mb-1">
+                                    <span class="text-xs text-green-600 font-medium">PIX</span>
+                                    <span class="font-bold text-2xl text-gray-900">R$ 38</span>
+                                </div>
+                                <p class="text-xs text-gray-600">em até 4x de R$ 9,50</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
                 <!-- Paginação -->

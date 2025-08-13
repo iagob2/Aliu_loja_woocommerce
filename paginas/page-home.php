@@ -17,10 +17,10 @@ get_header();
                     Crie estampas únicas com IA, desenhe do zero ou escolha designs prontos. Sua moda, sua personalidade.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#criar" class="btn-aliu btn-primary">
+                    <a href="<?php echo home_url('/produtos/'); ?>" class="btn-aliu btn-primary">
                         Criar Estampa
                     </a>
-                    <a href="#produtos" class="btn-aliu btn-secondary">
+                    <a href="<?php echo home_url('/produtos/'); ?>" class="btn-aliu btn-secondary">
                         Ver Produtos
                     </a>
                 </div>
@@ -113,9 +113,9 @@ get_header();
                             <span class="font-bold text-2xl text-red-600">R$ 45</span>
                         </div>
                         <p class="text-sm text-gray-600 mb-4">Material 100% algodão, estampa exclusiva</p>
-                        <button class="w-full bg-aliu-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-600 transition-colors">
+                        <a href="<?php echo home_url('/camisetas/'); ?>" class="block w-full bg-aliu-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-600 transition-colors text-center">
                             Comprar Agora
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <!-- Promoção 2 -->
@@ -135,9 +135,9 @@ get_header();
                             <span class="font-bold text-2xl text-red-600">R$ 72</span>
                         </div>
                         <p class="text-sm text-gray-600 mb-4">Tecido macio, design moderno</p>
-                        <button class="w-full bg-aliu-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-600 transition-colors">
+                        <a href="<?php echo home_url('/casacos/'); ?>" class="block w-full bg-aliu-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-600 transition-colors text-center">
                             Comprar Agora
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <!-- Promoção 3 -->
@@ -157,9 +157,9 @@ get_header();
                             <span class="font-bold text-2xl text-red-600">R$ 90</span>
                         </div>
                         <p class="text-sm text-gray-600 mb-4">Camiseta + Moletom + Boné</p>
-                        <button class="w-full bg-aliu-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-600 transition-colors">
+                        <a href="<?php echo home_url('/produtos/'); ?>" class="block w-full bg-aliu-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-600 transition-colors text-center">
                             Comprar Agora
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -176,12 +176,12 @@ get_header();
                         Aproveite o frete grátis em todos os produtos da nossa coleção promocional
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="bg-aliu-primary text-white py-3 px-8 rounded-xl font-semibold hover:bg-red-600 transition-colors">
+                        <a href="<?php echo home_url('/produtos/'); ?>" class="bg-aliu-primary text-white py-3 px-8 rounded-xl font-semibold hover:bg-red-600 transition-colors text-center">
                             Ver Todas as Promoções
-                        </button>
-                        <button class="border-2 border-aliu-primary text-aliu-primary py-3 px-8 rounded-xl font-semibold hover:bg-aliu-primary hover:text-white transition-colors">
+                        </a>
+                        <a href="<?php echo home_url('/produtos/'); ?>" class="border-2 border-aliu-primary text-aliu-primary py-3 px-8 rounded-xl font-semibold hover:bg-aliu-primary hover:text-white transition-colors text-center">
                             Criar Estampa Personalizada
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -210,9 +210,9 @@ get_header();
                 <h3 class="font-semibold text-lg text-gray-900">Camiseta Básica</h3>
                 <p class="font-bold text-lg text-indigo-600">R$ 45</p>
               </div>
-              <button class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Adicionar ao carrinho">
+              <a href="<?php echo home_url('/camisetas/'); ?>" class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Ver Camisetas">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.16 16h9.68a2 2 0 0 0 1.97-1.68l1.18-6.59A1 1 0 0 0 19 7H6.21l-.94-4.34A1 1 0 0 0 4.3 2H2v2h1.3l3.6 16.34A2 2 0 0 0 8.8 22h8.4v-2H8.8l-.64-3z"/></svg>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Card 2 -->
@@ -225,9 +225,9 @@ get_header();
                 <h3 class="font-semibold text-lg text-gray-900">Moletom Confort</h3>
                 <p class="font-bold text-lg text-indigo-600">R$ 89</p>
               </div>
-              <button class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Adicionar ao carrinho">
+              <a href="<?php echo home_url('/casacos/'); ?>" class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Ver Casacos">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.16 16h9.68a2 2 0 0 0 1.97-1.68l1.18-6.59A1 1 0 0 0 19 7H6.21l-.94-4.34A1 1 0 0 0 4.3 2H2v2h1.3l3.6 16.34A2 2 0 0 0 8.8 22h8.4v-2H8.8l-.64-3z"/></svg>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Card 3 -->
@@ -240,9 +240,9 @@ get_header();
                 <h3 class="font-semibold text-lg text-gray-900">Boné Snapback</h3>
                 <p class="font-bold text-lg text-indigo-600">R$ 35</p>
               </div>
-              <button class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Adicionar ao carrinho">
+              <a href="<?php echo home_url('/bones/'); ?>" class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Ver Bonés">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.16 16h9.68a2 2 0 0 0 1.97-1.68l1.18-6.59A1 1 0 0 0 19 7H6.21l-.94-4.34A1 1 0 0 0 4.3 2H2v2h1.3l3.6 16.34A2 2 0 0 0 8.8 22h8.4v-2H8.8l-.64-3z"/></svg>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Card 4 -->
@@ -255,9 +255,9 @@ get_header();
                 <h3 class="font-semibold text-lg text-gray-900">Estampa Artística</h3>
                 <p class="font-bold text-lg text-indigo-600">R$ 39</p>
               </div>
-              <button class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Adicionar ao carrinho">
+              <a href="<?php echo home_url('/produtos/'); ?>" class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Ver Produtos">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.16 16h9.68a2 2 0 0 0 1.97-1.68l1.18-6.59A1 1 0 0 0 19 7H6.21l-.94-4.34A1 1 0 0 0 4.3 2H2v2h1.3l3.6 16.34A2 2 0 0 0 8.8 22h8.4v-2H8.8l-.64-3z"/></svg>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Card 5 -->
@@ -270,9 +270,9 @@ get_header();
                 <h3 class="font-semibold text-lg text-gray-900">Eco Bag</h3>
                 <p class="font-bold text-lg text-indigo-600">R$ 29</p>
               </div>
-              <button class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Adicionar ao carrinho">
+              <a href="<?php echo home_url('/produtos/'); ?>" class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Ver Produtos">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.16 16h9.68a2 2 0 0 0 1.97-1.68l1.18-6.59A1 1 0 0 0 19 7H6.21l-.94-4.34A1 1 0 0 0 4.3 2H2v2h1.3l3.6 16.34A2 2 0 0 0 8.8 22h8.4v-2H8.8l-.64-3z"/></svg>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Card 6 -->
@@ -285,9 +285,9 @@ get_header();
                 <h3 class="font-semibold text-lg text-gray-900">Caneca Personalizada</h3>
                 <p class="font-bold text-lg text-indigo-600">R$ 25</p>
               </div>
-              <button class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Adicionar ao carrinho">
+              <a href="<?php echo home_url('/produtos/'); ?>" class="text-gray-800 hover:text-indigo-600 transition-colors" aria-label="Ver Produtos">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.16 16h9.68a2 2 0 0 0 1.97-1.68l1.18-6.59A1 1 0 0 0 19 7H6.21l-.94-4.34A1 1 0 0 0 4.3 2H2v2h1.3l3.6 16.34A2 2 0 0 0 8.8 22h8.4v-2H8.8l-.64-3z"/></svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -304,10 +304,10 @@ get_header();
                 Transforme suas ideias em realidade. Crie sua primeira estampa personalizada agora.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#criar" class="btn-aliu btn-primary">
+                    <a href="<?php echo home_url('/produtos/'); ?>" class="btn-aliu btn-primary">
                         Criar Estampa
                     </a>
-                    <a href="#produtos" class="btn-aliu btn-secondary">
+                    <a href="<?php echo home_url('/produtos/'); ?>" class="btn-aliu btn-secondary">
                         Ver Produtos
                     </a>
               </div>

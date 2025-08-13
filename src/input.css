@@ -44,11 +44,11 @@
   /* HEADER E MENU PRINCIPAL */
   /**
    * ESTILOS DO HEADER
-   * Responsável por: Padding vertical + Cor do texto herdada
-   * Depende de: Variável CSS --panel-text-color definida
+   * Responsável por: Padding vertical + Cor do texto padrão
+   * Depende de: Nenhuma dependência específica
    */
   header {
-    @apply text-[var(--panel-text-color)];
+    @apply text-gray-800;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
   }
@@ -100,11 +100,10 @@
   /**
    * LINKS DO MENU
    * Responsável por: Transição suave + Hover vermelho
-   * Depende de: Variável CSS --panel-text-color definida
+   * Depende de: Nenhuma dependência específica
    */
   .menu a {
-    @apply transition-colors duration-300 hover:text-red-500;
-    color: var(--panel-text-color);
+    @apply transition-colors duration-300 hover:text-red-500 text-gray-800;
   }
   
   /* SUBMENUS E DROPDOWNS */
@@ -155,10 +154,10 @@
   /**
    * CONTAINER DO CARRINHO
    * Responsável por: Gradiente de fundo + Posicionamento relativo
-   * Depende de: Variável CSS --bg-color definida
+   * Depende de: Nenhuma dependência específica
    */
   .cart-container {
-    background: linear-gradient(to bottom, #fff 0%, #fff 100px, var(--bg-color) 100px);
+    background: linear-gradient(to bottom, #fff 0%, #fff 100px, #f7fafc 100px);
     position: relative;
   }
   
@@ -190,10 +189,10 @@
   /**
    * GRADIENTE DO MENU
    * Responsável por: Conexão visual com o fundo do conteúdo
-   * Depende de: Variável CSS --bg-color definida
+   * Depende de: Nenhuma dependência específica
    */
   .menu {
-    background: linear-gradient(to bottom, #fff 0%, #fff 100px, var(--bg-color) 100px);
+    background: linear-gradient(to bottom, #fff 0%, #fff 100px, #f7fafc 100px);
   }
   
   /**
@@ -207,5 +206,266 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+  }
+
+  /* ============================================================================
+     COMPONENTES ESPECÍFICOS DA PÁGINA DO CARRINHO
+     ============================================================================ */
+
+  /**
+   * ITEM DO CARRINHO
+   * Responsável por: Animação hover + Transições suaves
+   * Depende de: Classe 'cart-item' aplicada no HTML
+   */
+  .cart-item {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .cart-item:hover {
+    @apply transform -translate-y-1 shadow-lg;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  /**
+   * BOTÕES DE QUANTIDADE
+   * Responsável por: Efeitos hover + Estados ativos
+   * Depende de: Estrutura HTML dos controles de quantidade
+   */
+  .quantity-btn {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .quantity-btn:hover {
+    @apply transform scale-110;
+  }
+
+  .quantity-btn:active {
+    @apply transform scale-95;
+  }
+
+  /**
+   * BOTÃO REMOVER
+   * Responsável por: Animação de hover + Feedback visual
+   * Depende de: Classe aplicada no botão de remover
+   */
+  .remove-btn {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .remove-btn:hover {
+    @apply transform scale-110 bg-red-50;
+  }
+
+  /**
+   * TOAST DE NOTIFICAÇÃO
+   * Responsável por: Animação de entrada/saída + Posicionamento
+   * Depende de: ID 'toast' no HTML
+   */
+  .toast-enter {
+    animation: toastSlideIn 0.3s ease-out forwards;
+  }
+
+  .toast-exit {
+    animation: toastSlideOut 0.3s ease-in forwards;
+  }
+
+  /**
+   * INPUT DE CUPOM
+   * Responsável por: Foco + Estados de validação
+   * Depende de: Input com placeholder "Digite seu cupom"
+   */
+  .coupon-input:focus {
+    @apply ring-2 ring-aliu-primary/20 border-aliu-primary;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  }
+
+  /**
+   * BOTÃO APLICAR CUPOM
+   * Responsável por: Estados hover + Loading
+   * Depende de: Botão "Aplicar" no cupom
+   */
+  .coupon-btn {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .coupon-btn:hover {
+    @apply transform scale-105 shadow-md;
+  }
+
+  .coupon-btn:active {
+    @apply transform scale-95;
+  }
+
+  /**
+   * BOTÃO FINALIZAR COMPRA
+   * Responsável por: Gradiente + Efeitos hover
+   * Depende de: Botão "Finalizar Compra"
+   */
+  .checkout-btn {
+    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .checkout-btn:hover {
+    @apply transform scale-105 shadow-xl;
+    background: linear-gradient(135deg, #ff5252 0%, #26a69a 100%);
+  }
+
+  /**
+   * BOTÃO CONTINUAR COMPRANDO
+   * Responsável por: Estados hover + Transições
+   * Depende de: Botão "Continuar Comprando"
+   */
+  .continue-btn {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .continue-btn:hover {
+    @apply transform scale-105 bg-gray-50 border-gray-400;
+  }
+
+  /**
+   * CARRINHO VAZIO
+   * Responsável por: Animação de entrada + Estilo
+   * Depende de: ID 'empty-cart' no HTML
+   */
+  .empty-cart {
+    @apply transition-all duration-500 ease-in-out;
+  }
+
+  .empty-cart.show {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  /**
+   * RESUMO DO PEDIDO
+   * Responsável por: Sticky positioning + Sombra
+   * Depende de: Container do resumo
+   */
+  .order-summary {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .order-summary:hover {
+    @apply shadow-xl;
+  }
+
+  /**
+   * INFORMAÇÕES DE FRETE
+   * Responsável por: Background + Bordas
+   * Depende de: Container das informações de frete
+   */
+  .shipping-info {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    @apply border border-green-200;
+  }
+
+  /**
+   * SEGURANÇA
+   * Responsável por: Ícone + Texto
+   * Depende de: Container de segurança
+   */
+  .security-badge {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .security-badge:hover {
+    @apply text-gray-600 transform scale-105;
+  }
+}
+
+/* ============================================================================
+   ANIMAÇÕES PERSONALIZADAS
+   ============================================================================ */
+
+@layer utilities {
+  /**
+   * ANIMAÇÃO TOAST SLIDE IN
+   * Responsável por: Entrada do toast pela direita
+   */
+  @keyframes toastSlideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /**
+   * ANIMAÇÃO TOAST SLIDE OUT
+   * Responsável por: Saída do toast pela direita
+   */
+  @keyframes toastSlideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  /**
+   * ANIMAÇÃO FADE IN UP
+   * Responsável por: Entrada suave de elementos
+   */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /**
+   * ANIMAÇÃO PULSE SUAVE
+   * Responsável por: Efeito de pulso nos botões
+   */
+  @keyframes softPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /**
+   * ANIMAÇÃO SHAKE
+   * Responsável por: Efeito de shake para erros
+   */
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(5px);
+    }
+  }
+
+  /**
+   * UTILITÁRIOS DE ANIMAÇÃO
+   * Responsável por: Classes para aplicar animações
+   */
+  .animate-soft-pulse {
+    animation: softPulse 2s ease-in-out infinite;
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
   }
 } 

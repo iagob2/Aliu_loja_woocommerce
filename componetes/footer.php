@@ -32,9 +32,9 @@
                         ));
                     } else {
                         echo '<ul class="space-y-2">
-                            <li><a href="#" class="text-gray-300 hover:text-aliu-accent transition-colors">Sobre</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-aliu-accent transition-colors">Equipe</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-aliu-accent transition-colors">Contato</a></li>
+                            <li><a href="' . home_url('/sobre/') . '" class="text-gray-300 hover:text-aliu-accent transition-colors">Sobre</a></li>
+                            <li><a href="' . home_url('/produtos/') . '" class="text-gray-300 hover:text-aliu-accent transition-colors">Produtos</a></li>
+                            <li><a href="' . home_url('/contato/') . '" class="text-gray-300 hover:text-aliu-accent transition-colors">Contato</a></li>
                         </ul>';
                     }
                     ?>
@@ -78,9 +78,9 @@
                         ));
                     } else {
                         echo '<ul class="space-y-2">
-                            <li><a href="#" class="text-gray-300 hover:text-aliu-accent transition-colors">Termos de Uso</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-aliu-accent transition-colors">Política de Privacidade</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-aliu-accent transition-colors">Política de devolução e reembolso</a></li>
+                            <li><a href="' . home_url('/termos-de-uso/') . '" class="text-gray-300 hover:text-aliu-accent transition-colors">Termos de Uso</a></li>
+                            <li><a href="' . home_url('/politica-privacidade/') . '" class="text-gray-300 hover:text-aliu-accent transition-colors">Política de Privacidade</a></li>
+                            <li><a href="' . home_url('/politica-devolucao/') . '" class="text-gray-300 hover:text-aliu-accent transition-colors">Política de devolução e reembolso</a></li>
                         </ul>';
                     }
                     ?>
@@ -95,5 +95,5 @@
     
     <!-- Força Tailwind a manter classes customizadas -->
     <div class="hidden menu dropdown cart cart-container cart-dropdown"></div>
-    </body>
+</body>
 </html> 

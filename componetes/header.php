@@ -34,11 +34,11 @@
      * 
      * IMPORTANTE: A classe 'menu' é essencial para position: sticky
      -->
-    <header class="menu w-full bg-white">
+    <header class="menu w-full bg-white shadow-lg">
         
         <!-- CONTAINER DO HEADER -->
         <!-- Responsável por: Centralização + Flexbox + Padding -->
-        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center" style="padding-top:0.75rem; padding-bottom:0.75rem;">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center py-4">
             
             <!-- LOGO ALIU -->
             <!-- Responsável por: Logo da marca + Link para home -->
@@ -56,7 +56,7 @@
             wp_nav_menu([
                 'theme_location' => 'menu-principal',  // Localização registrada no functions.php
                 'container' => false,                  // Remove div container padrão
-                'menu_class' => 'flex space-x-8 text-[var(--panel-text-color)] font-medium font-sans', // Classes Tailwind
+                'menu_class' => 'flex space-x-8 text-gray-800 font-medium font-sans', // Classes Tailwind
                 'link_before' => '',                   // Sem conteúdo antes do link
                 'link_after' => '',                    // Sem conteúdo depois do link
                 'fallback_cb' => false,                // Não mostra menu padrão se não existir
@@ -67,4 +67,4 @@
     
     <!-- CONTEÚDO PRINCIPAL -->
     <!-- Responsável por: Início do conteúdo da página -->
-    <div> 
+    <div class="pt-16"> 
