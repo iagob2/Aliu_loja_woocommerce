@@ -1,14 +1,6 @@
 <?php
 // Fallback padrão do tema
 get_header();
-
-// Verificar se existe uma página home configurada
-$home_page = get_page_by_title('Home');
-if ($home_page) {
-    // Redirecionar para a página home
-    wp_redirect(get_permalink($home_page->ID));
-    exit;
-}
 ?>
 
 <main class="min-h-screen bg-gray-50">

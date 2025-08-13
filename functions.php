@@ -211,28 +211,33 @@ add_action('after_setup_theme', function() {
 });
 
 /**
- * CONFIGURAR PÁGINA INICIAL COMO PÁGINA ESTÁTICA
- * Responsável por: Definir a página home como padrão do site
- * Depende de: Página "Home" criada no WordPress
+ * SUPORTE BÁSICO AO WORDPRESS
+ * Responsável por: Habilitar funcionalidades básicas do WordPress
+ * Depende de: Nenhuma dependência específica
  */
-add_action('after_setup_theme', function() {
-    // Verificar se a página home existe
-    $home_page = get_page_by_title('Home');
-    if ($home_page) {
-        update_option('show_on_front', 'page');
-        update_option('page_on_front', $home_page->ID);
-    }
-});
 
 /**
- * REDIRECIONAR INDEX PARA PÁGINA HOME
- * Responsável por: Garantir que a página inicial seja exibida corretamente
- * Depende de: Página "Home" configurada
+ * CONFIGURAR PÁGINA HOME AUTOMATICAMENTE
+ * Responsável por: Verificar se existe página home e configurá-la
+ * Depende de: Página "Home" criada no WordPress
  */
-add_action('template_redirect', function() {
-    if (is_home() && !is_front_page()) {
-        wp_redirect(home_url('/'));
-        exit;
+add_action('init', function() {
+    // Verificar se já está configurado
+    if (get_option('show_on_front') === 'page') {
+        return;
+    }
+    
+    // Procurar pela página home
+    $home_page = get_page_by_title('Home');
+    if ($home_page) {
+        // Configurar como página inicial
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $home_page->ID);
+        
+        // Limpar cache se necessário
+        if (function_exists('wp_cache_flush')) {
+            wp_cache_flush();
+        }
     }
 });
 
