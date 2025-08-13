@@ -6,7 +6,7 @@ get_header();
 ?>
 <main>
     <!-- Hero Section -->
-    <section id="home" class="pt-16 min-h-screen flex items-center bg-gradient-to-br from-aliu-primary to-aliu-secondary">
+    <section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-aliu-primary to-aliu-secondary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">

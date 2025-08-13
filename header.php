@@ -38,7 +38,7 @@
         
         <!-- CONTAINER DO HEADER -->
         <!-- Responsável por: Centralização + Flexbox + Padding -->
-        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center py-4">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center py-4 mg-bottom-0">
             
             <!-- LOGO ALIU -->
             <!-- Responsável por: Logo da marca + Link para home -->
@@ -67,4 +67,4 @@
     
     <!-- CONTEÚDO PRINCIPAL -->
     <!-- Responsável por: Início do conteúdo da página -->
-    <div class="pt-16"> 
+    <div> 
