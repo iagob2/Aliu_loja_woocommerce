@@ -169,6 +169,10 @@ class Aliu_Footer_Walker extends Walker_Nav_Menu {
     }
 } 
 
+// ============================================================================
+// SUPORTE AO WOOCOMMERCE
+// ============================================================================
+
 /**
  * SUPORTE AO WOOCOMMERCE
  * Responsável por: Habilitar funcionalidades do WooCommerce no tema
@@ -181,6 +185,55 @@ add_action('after_setup_theme', function() {
     add_theme_support('wc-product-gallery-zoom');
     add_theme_support('wc-product-gallery-lightbox');
     add_theme_support('wc-product-gallery-slider');
+    
+    // Adicionar suporte a imagens destacadas
+    add_theme_support('post-thumbnails');
+    
+    // Adicionar suporte a HTML5
+    add_theme_support('html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ));
+    
+    // Adicionar suporte a título personalizado
+    add_theme_support('title-tag');
+    
+    // Adicionar suporte a logo personalizado
+    add_theme_support('custom-logo', array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
+});
+
+/**
+ * CONFIGURAR PÁGINA INICIAL COMO PÁGINA ESTÁTICA
+ * Responsável por: Definir a página home como padrão do site
+ * Depende de: Página "Home" criada no WordPress
+ */
+add_action('after_setup_theme', function() {
+    // Verificar se a página home existe
+    $home_page = get_page_by_title('Home');
+    if ($home_page) {
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $home_page->ID);
+    }
+});
+
+/**
+ * REDIRECIONAR INDEX PARA PÁGINA HOME
+ * Responsável por: Garantir que a página inicial seja exibida corretamente
+ * Depende de: Página "Home" configurada
+ */
+add_action('template_redirect', function() {
+    if (is_home() && !is_front_page()) {
+        wp_redirect(home_url('/'));
+        exit;
+    }
 });
 
 /**
